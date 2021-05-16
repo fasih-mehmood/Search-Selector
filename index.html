@@ -14,7 +14,7 @@
 
 <body>
 
-  <form class="m-5">
+  <form class="mt-5 ml-3 mr-5">
     <div class="form-row align-items-center">
       <div class="col-10 col-sm-auto">
         <label class="sr-only" for="citiesField">City</label>
@@ -48,7 +48,7 @@
         <div class="dropdown mb-2">
           <button class="btn btn-outline-primary dropdown-toggle" type="button" id="priceDropDown"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Price</button>
-          <ul class="dropdown-menu mt-2 p-3 dpdwn-right">
+          <ul class="dropdown-menu mt-2 p-3">
             <li class="font-weight-bold">Price</li>
             <li class="d-flex flex-row justify-content-around">
               <div class="d-flex flex-column input-group my-3 col-6">
@@ -109,7 +109,6 @@
       </div>
 
       <div class="col-auto">
-        <label class="sr-only" for="anyProperty">Property Type</label>
         <div class="dropdown mb-2">
           <button class="btn btn-outline-primary dropdown-toggle" type="button" id="propertyDropDown"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Property Type</button>
@@ -174,8 +173,9 @@
         </div>
       </div>
 
-      <div class="col-6 col-sm-auto">
-        <label class="sr-only" for="minBedsField">Bedrooms</label>
+      <div class="col-auto">
+        <label class="sr-only" for="minBedsField">Minimum Bedrooms</label>
+        <label class="sr-only" for="maxBedsField">Maximum Bedrooms</label>
         <div class="dropdown mb-2">
           <button class="btn btn-outline-primary dropdown-toggle" type="button" id="bedsDropDown" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Beds</button>
@@ -225,71 +225,6 @@
           </ul>
         </div>
       </div>
-      <!-- <div class="col-auto d-md-none d-block">
-        <div class="dropdown mb-2">
-          <button class="btn btn-outline-primary dropdown-toggle" type="button" id="moreDropDown" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">More Filters</button>
-          <ul class="dropdown-menu more-dpdwn mt-2 p-3 w-100">
-            <li class="font-weight-bold">Property Type</li>
-            <label class="sr-only" for="minPrice">Price</label>
-            <div class="row">
-              <li class="property-item input-group my-3 col-6">
-                <div class="custom-control custom-checkbox w-100">
-                  <input name="any" type="checkbox" value="Any" checked class="custom-control-input" id="anyProperty">
-                  <label class="custom-control-label w-100" for="anyProperty">Any</label>
-                </div>
-              </li>
-              <li class="property-item input-group my-3 col-6">
-                <div class="custom-control custom-checkbox w-100">
-                  <input name="acreageFarms" type="checkbox" value="Acreage & Farms" class="custom-control-input"
-                    id="acreProperty">
-                  <label class="custom-control-label w-100" for="acreProperty">Acreage & Farms</label>
-                </div>
-              </li>
-            </div>
-            <div class="row">
-              <li class="property-item input-group my-3 col-6">
-                <div class="custom-control custom-checkbox w-100">
-                  <input name="commercialIndustrial" type="checkbox" value="Commercial & Indr."
-                    class="custom-control-input" id="commProperty">
-                  <label class="custom-control-label w-100" for="commProperty">Commercial & Indr.</label>
-                </div>
-              </li>
-              <li class="property-item input-group my-3 col-6">
-                <div class="custom-control custom-checkbox w-100">
-                  <input name="multiFamily24" type="checkbox" value="Multi-Family 2-4" class="custom-control-input"
-                    id="mult24Property">
-                  <label class="custom-control-label w-100" for="mult24Property">Multi-Family 2-4</label>
-                </div>
-              </li>
-            </div>
-            <div class="row">
-              <li class="property-item input-group my-3 col-6">
-                <div class="custom-control custom-checkbox w-100">
-                  <input name="multiFamily5" type="checkbox" value="Multi-Family 5+" class="custom-control-input"
-                    id="mult5Property">
-                  <label class="custom-control-label w-100" for="mult5Property">Multi-Family 5+</label>
-                </div>
-              </li>
-              <li class="property-item input-group my-3 col-6">
-                <div class="custom-control custom-checkbox w-100">
-                  <input name="homes" type="checkbox" value="Homes" class="custom-control-input" id="homesProperty">
-                  <label class="custom-control-label w-100" for="homesProperty">Homes</label>
-                </div>
-              </li>
-            </div>
-            <div class="row">
-              <li class="property-item input-group my-3 col-6">
-                <div class="custom-control custom-checkbox w-100">
-                  <input name="homeLots" type="checkbox" value="Home Lots" class="custom-control-input"
-                    id="homeLotsProperty">
-                  <label class="custom-control-label w-100" for="homeLotsProperty">Home Lots</label>
-                </div>
-              </li>
-            </div>
-          </ul>
-        </div>
-      </div> -->
       <div class="col-auto">
         <button type="submit" class="btn btn-primary mb-2">Submit Search</button>
       </div>

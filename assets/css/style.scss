@@ -97,9 +97,28 @@ input[checked] {
   font-size: 11px;
 }
 
-.dpdwn-left {
-  transform: translate3d(0px, 38px, 0px);
+// X-Small devices (portrait phones, 576px and down)
+@media (max-width: 576px) {
+  .dropdown-menu {
+    transform: translateX(-50%);
+    min-width: 300px;
+  }
 }
-.dpdwn-right {
-  transform: translate3d(-75%, 38px, 0px) !important;
+
+// Small devices (portrait phones, 576px and up)
+@media (min-width: 576px) {
+  .dropdown-menu {
+    transform: translateX(-50%);
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .dropdown-menu {
+    transform: translateX(-50%);
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
 }

@@ -30,30 +30,52 @@ $(document).ready(function () {
     maxPriceList.removeClass('d-none');
   });
 
-  // Change Price button text on minimum price change
-  $(".minPrice-list .list-group-item").click(function () {
-    var minpr = $(this).attr('data-value');
-    var maxpr = maxPrice.attr("value");
-    minPrice.attr("value", minpr);
-    if (maxpr != "" && maxpr != undefined)
+  function swapPrice() {
+    console.log("max: " + maxPrice.val());
+    console.log("min: " + minPrice.val());
+    if (maxPrice.val() !== "" && minPrice.val() !== "" 
+    && (parseFloat(maxPrice.val()) < parseFloat(minPrice.val()))) {
+      var temp = maxPrice.val();
+      maxPrice.val(minPrice.val());
+      minPrice.val(temp);
+    }
+    // console.log(maxPrice.val() !== "" && minPrice.val() !== "" && (maxPrice.val() < minPrice.val()));
+  }
+
+  minPrice.on('change', function (e) {
+    swapPrice();
+    var minpr = minPrice.val();
+    var maxpr = maxPrice.val();
+    if (maxpr != "")
       priceBtnDp.text("Max $" + maxpr);
-    else if (minpr != "" && (maxpr == "" || maxpr == undefined))
+    else if (minpr != "" && maxpr == "")
       priceBtnDp.text("Min $" + minpr);
     else
       priceBtnDp.text("Price");
   });
 
-  // Change Price button text on maximum price change
-  $(".maxPrice-list .list-group-item").click(function () {
-    var maxpr = $(this).attr('data-value');
-    var minpr = minPrice.attr("value");
-    maxPrice.attr("value", maxpr);
+  maxPrice.on('change', function (e) {
+    swapPrice();
+    var minpr = minPrice.val();
+    var maxpr = maxPrice.val();
     if (maxpr != "")
       priceBtnDp.text("Max $" + maxpr);
     else if (minpr != "")
       priceBtnDp.text("Min $" + minpr);
     else
       priceBtnDp.text("Price");
+  });
+
+  // Change Price button text on minimum price change
+  $(".minPrice-list .list-group-item").click(function () {
+    var minpr = $(this).attr('data-value');
+    minPrice.val(minpr).change();
+  });
+
+  // Change Price button text on maximum price change
+  $(".maxPrice-list .list-group-item").click(function () {
+    var maxpr = $(this).attr('data-value');
+    maxPrice.val(maxpr).change();
   });
 
   // Make changes to checkboxes
@@ -134,11 +156,11 @@ $(document).ready(function () {
         bedBtnDp.text("Studio Plus");
       else
         bedBtnDp.text(selBtn.text() + " Beds");
-    // if max is studio
+      // if max is studio
     } else if (maxVal === "studio") {
       if (minVal === "any" || minVal === "studio")
         bedBtnDp.text("Studio Only");
-    // if max is a number
+      // if max is a number
     } else {
       if (minVal === "studio")
         bedBtnDp.text("Studio - " + maxVal + " Beds");
@@ -168,7 +190,7 @@ $(document).ready(function () {
         bedBtnDp.text("Studio Plus");
       else
         bedBtnDp.text(minVal + "+ Beds");
-    // if max is studio
+      // if max is studio
     } else if (maxVal === "studio") {
       if (minVal === "any" || minVal === "studio")
         bedBtnDp.text("Studio Only");
@@ -177,7 +199,7 @@ $(document).ready(function () {
         maxBeds.val(minVal);
         bedBtnDp.text("Studio - " + minVal + " Beds");
       }
-    // if max is a number
+      // if max is a number
     } else {
       if (minVal === "any") {
         bedBtnDp.text("Any - " + maxVal + " Beds");
