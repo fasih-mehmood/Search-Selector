@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Search Selector</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+
+<body>
+
+  <form class="m-5">
+    <div class="form-row align-items-center">
+      <div class="col-10 col-sm-auto">
+        <label class="sr-only" for="citiesField">City</label>
+        <input name="cities" class="form-control mb-2" list="cities" id="citiesField" data-list-focus="true"
+          placeholder="City">
+        <datalist id="cities">
+          <option value="Belle">
+          <option value="MO|Beulah">
+          <option value="MO|Boss">
+          <option value="MO|Bunker">
+          <option value="MO|Dixon">
+          <option value="MO|Doolittle">
+          <option value="MO|Edgar Springs">
+          <option value="MO|Jadwin">
+          <option value="MO|Jerome">
+          <option value="MO|Lenox">
+          <option value="MO|Licking">
+          <option value="MO|Newburg">
+          <option value="MO|Rolla">
+          <option value="MO|Salem">
+          <option value="MO|St James">
+          <option value="MO|Sullivan">
+          <option value="MO|Vichy">
+          <option value="MO|Vienna">
+          <option value="MO|">
+        </datalist>
+      </div>
+
+      <div class="col-auto">
+        <label class="sr-only" for="minPriceField">Price</label>
+        <div class="dropdown mb-2">
+          <button class="btn btn-outline-primary dropdown-toggle" type="button" id="priceDropDown"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Price</button>
+          <ul class="dropdown-menu mt-2 p-3 dpdwn-right">
+            <li class="font-weight-bold">Price</li>
+            <li class="d-flex flex-row justify-content-around">
+              <div class="d-flex flex-column input-group my-3 col-6">
+                <div class="input-field align-content-center d-flex flex-row align-items-center">
+                  <div class="currency pl-1">
+                    $
+                  </div>
+                  <input type="number" name="minPrice" id="minPriceField" min="1" class="form-control pl-3"
+                    aria-label="Minimum Amount" placeholder="No min">
+                </div>
+                <div class="list-group minPrice-list d-none">
+                  <button type="button" class="list-group-item list-group-item-action" data-value="">Any Price</button>
+                  <button type="button" class="list-group-item list-group-item-action" data-value="50000">$50K</button>
+                  <button type="button" class="list-group-item list-group-item-action" data-value="90000">$90K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="140000">$140K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="180000">$180K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="250000">$250K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="300000">$300K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="350000">$350K</button>
+                </div>
+              </div>
+              <div class="h-100 my-4 align-items-center">
+                -
+              </div>
+              <div class="d-flex flex-column input-group my-3 col-6">
+                <div class="input-field align-content-center d-flex flex-row align-items-center">
+                  <div class="currency pl-1">
+                    $
+                  </div>
+                  <input type="number" name="maxPrice" id="maxPriceField" min="1" class="form-control pl-3"
+                    aria-label="Maximum Amount" placeholder="No max">
+                </div>
+                <div class="list-group maxPrice-list">
+                  <button type="button" class="list-group-item list-group-item-action" data-value="90000">$90K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="180000">$180K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="250000">$250K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="350000">$350K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="450000">$450K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="500000">$500K</button>
+                  <button type="button" class="list-group-item list-group-item-action"
+                    data-value="600000">$600K</button>
+                  <button type="button" class="list-group-item list-group-item-action" data-value="">Any Price</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <label class="sr-only" for="anyProperty">Property Type</label>
+        <div class="dropdown mb-2">
+          <button class="btn btn-outline-primary dropdown-toggle" type="button" id="propertyDropDown"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Property Type</button>
+          <ul class="dropdown-menu property-dpdwn mt-2 p-3 w-100">
+            <li class="font-weight-bold">Property Type</li>
+            <li class="row">
+              <div class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="any" type="checkbox" value="Any" checked class="custom-control-input" id="anyProperty">
+                  <label class="custom-control-label w-100" for="anyProperty">Any</label>
+                </div>
+              </div>
+              <div class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="acreageFarms" type="checkbox" value="Acreage & Farms" class="custom-control-input"
+                    id="acreProperty">
+                  <label class="custom-control-label w-100" for="acreProperty">Acreage & Farms</label>
+                </div>
+              </div>
+            </li>
+            <li class="row">
+              <div class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="commercialIndustrial" type="checkbox" value="Commercial & Indr."
+                    class="custom-control-input" id="commProperty">
+                  <label class="custom-control-label w-100" for="commProperty">Commercial & Indr.</label>
+                </div>
+              </div>
+              <div class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="multiFamily24" type="checkbox" value="Multi-Family 2-4" class="custom-control-input"
+                    id="mult24Property">
+                  <label class="custom-control-label w-100" for="mult24Property">Multi-Family 2-4</label>
+                </div>
+              </div>
+            </li>
+            <li class="row">
+              <div class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="multiFamily5" type="checkbox" value="Multi-Family 5+" class="custom-control-input"
+                    id="mult5Property">
+                  <label class="custom-control-label" for="mult5Property">Multi-Family 5+</label>
+                </div>
+              </div>
+              <div class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="homes" type="checkbox" value="Homes" class="custom-control-input" id="homesProperty">
+                  <label class="custom-control-label w-100" for="homesProperty">Homes</label>
+                </div>
+              </div>
+            </li>
+            <li class="row">
+              <div class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="homeLots" type="checkbox" value="Home Lots" class="custom-control-input"
+                    id="homeLotsProperty">
+                  <label class="custom-control-label w-100" for="homeLotsProperty">Home Lots</label>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-auto">
+        <label class="sr-only" for="minBedsField">Bedrooms</label>
+        <div class="dropdown mb-2">
+          <button class="btn btn-outline-primary dropdown-toggle" type="button" id="bedsDropDown" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Beds</button>
+          <ul class="dropdown-menu beds-dpdwn p-3 mt-2">
+            <li class="font-weight-bold">Bedrooms</li>
+            <li class="bedroom-btns row justify-content-around my-3 mx-0">
+              <button type="button" class="d-none" data-value="studioP">Studio Plus</button>
+              <button type="button" class="active" data-value="any">Any</button>
+              <button type="button" data-value="1">1+</button>
+              <button type="button" data-value="2">2+</button>
+              <button type="button" data-value="3">3+</button>
+              <button type="button" data-value="4">4+</button>
+              <button type="button" data-value="5">5+</button>
+            </li>
+            <li class="text-muted text-subtitle">Or Select Bedrooms Range</li>
+            <li class="d-flex flex-row justify-content-around">
+              <div class="d-flex flex-column input-group my-3 col-6 pl-0">
+                <div class="input-field align-content-center d-flex flex-row align-items-center">
+                  <select name="minBeds" id="minBedsField" class="custom-select">
+                    <option value="any" selected>From</option>
+                    <option value="studio">Studio</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="h-100 my-4 align-items-center">
+                -
+              </div>
+              <div class="d-flex flex-column input-group my-3 col-6 pr-0">
+                <div class="input-field align-content-center d-flex flex-row align-items-center">
+                  <select name="maxBeds" id="maxBedsField" class="custom-select">
+                    <option value="any" selected>To</option>
+                    <option value="studio">Studio</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- <div class="col-auto d-md-none d-block">
+        <div class="dropdown mb-2">
+          <button class="btn btn-outline-primary dropdown-toggle" type="button" id="moreDropDown" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">More Filters</button>
+          <ul class="dropdown-menu more-dpdwn mt-2 p-3 w-100">
+            <li class="font-weight-bold">Property Type</li>
+            <label class="sr-only" for="minPrice">Price</label>
+            <div class="row">
+              <li class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="any" type="checkbox" value="Any" checked class="custom-control-input" id="anyProperty">
+                  <label class="custom-control-label w-100" for="anyProperty">Any</label>
+                </div>
+              </li>
+              <li class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="acreageFarms" type="checkbox" value="Acreage & Farms" class="custom-control-input"
+                    id="acreProperty">
+                  <label class="custom-control-label w-100" for="acreProperty">Acreage & Farms</label>
+                </div>
+              </li>
+            </div>
+            <div class="row">
+              <li class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="commercialIndustrial" type="checkbox" value="Commercial & Indr."
+                    class="custom-control-input" id="commProperty">
+                  <label class="custom-control-label w-100" for="commProperty">Commercial & Indr.</label>
+                </div>
+              </li>
+              <li class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="multiFamily24" type="checkbox" value="Multi-Family 2-4" class="custom-control-input"
+                    id="mult24Property">
+                  <label class="custom-control-label w-100" for="mult24Property">Multi-Family 2-4</label>
+                </div>
+              </li>
+            </div>
+            <div class="row">
+              <li class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="multiFamily5" type="checkbox" value="Multi-Family 5+" class="custom-control-input"
+                    id="mult5Property">
+                  <label class="custom-control-label w-100" for="mult5Property">Multi-Family 5+</label>
+                </div>
+              </li>
+              <li class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="homes" type="checkbox" value="Homes" class="custom-control-input" id="homesProperty">
+                  <label class="custom-control-label w-100" for="homesProperty">Homes</label>
+                </div>
+              </li>
+            </div>
+            <div class="row">
+              <li class="property-item input-group my-3 col-6">
+                <div class="custom-control custom-checkbox w-100">
+                  <input name="homeLots" type="checkbox" value="Home Lots" class="custom-control-input"
+                    id="homeLotsProperty">
+                  <label class="custom-control-label w-100" for="homeLotsProperty">Home Lots</label>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div> -->
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-2">Submit Search</button>
+      </div>
+    </div>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+  </script>
+  <script src="assets/js/script.prod.js"></script>
+</body>
+
+</html>
