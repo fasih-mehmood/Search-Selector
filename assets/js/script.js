@@ -265,7 +265,7 @@ $(document).ready(function () {
         bathBtnDp.text("Baths");
       else
         bathBtnDp.text(selBtn.text() + " Baths");
-    }else {
+    } else {
       if (minVal === "any")
         bathBtnDp.text("Any - " + maxVal + " Baths");
       else
