@@ -9,12 +9,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-  <form class="mt-5 ml-3 mr-5">
+  <form class="m-3">
     <div class="form-row align-items-center">
       <div class="col-10 col-sm-auto">
         <label class="sr-only" for="citiesField">City</label>
@@ -225,6 +225,57 @@
           </ul>
         </div>
       </div>
+      
+      <div class="col-auto">
+        <label class="sr-only" for="minBathsField">Minimum Baths</label>
+        <label class="sr-only" for="maxBathsField">Maximum Baths</label>
+        <div class="dropdown mb-2">
+          <button class="btn btn-outline-primary dropdown-toggle" type="button" id="bathsDropDown" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Baths</button>
+          <ul class="dropdown-menu baths-dpdwn p-3 mt-2">
+            <li class="font-weight-bold">Bathrooms</li>
+            <li class="bath-btns row justify-content-around my-3 mx-0">
+              <button type="button" class="active" data-value="any">Any</button>
+              <button type="button" data-value="1">1+</button>
+              <button type="button" data-value="2">2+</button>
+              <button type="button" data-value="3">3+</button>
+              <button type="button" data-value="4">4+</button>
+              <button type="button" data-value="5">5+</button>
+            </li>
+            <li class="text-muted text-subtitle">Or Select Bathrooms Range</li>
+            <li class="d-flex flex-row justify-content-around">
+              <div class="d-flex flex-column input-group my-3 col-6 pl-0">
+                <div class="input-field align-content-center d-flex flex-row align-items-center">
+                  <select name="minBaths" id="minBathsField" class="custom-select">
+                    <option value="any" selected>From</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="h-100 my-4 align-items-center">
+                -
+              </div>
+              <div class="d-flex flex-column input-group my-3 col-6 pr-0">
+                <div class="input-field align-content-center d-flex flex-row align-items-center">
+                  <select name="maxBaths" id="maxBathsField" class="custom-select">
+                    <option value="any" selected>To</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
       <div class="col-auto">
         <button type="submit" class="btn btn-primary mb-2">Submit Search</button>
       </div>
@@ -237,7 +288,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
   </script>
-  <script src="assets/js/script.prod.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

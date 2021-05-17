@@ -9,7 +9,10 @@ $(document).ready(function () {
   const bedBtnDp = $('#bedsDropDown');
   const minBeds = $("#minBedsField");
   const maxBeds = $("#maxBedsField");
-  // const bedDpDwn = $(".beds-dpdwn");
+  const bathBtns = $('.bath-btns button');
+  const bathBtnDp = $('#bathsDropDown');
+  const minBaths = $("#minBathsField");
+  const maxBaths = $("#maxBathsField");
 
   // stop dropdown from closing when the menu is clicked
   $('.dropdown-menu').on({
@@ -30,18 +33,17 @@ $(document).ready(function () {
     maxPriceList.removeClass('d-none');
   });
 
+  // swap price if max is more than min
   function swapPrice() {
-    console.log("max: " + maxPrice.val());
-    console.log("min: " + minPrice.val());
-    if (maxPrice.val() !== "" && minPrice.val() !== "" 
-    && (parseFloat(maxPrice.val()) < parseFloat(minPrice.val()))) {
+    if (maxPrice.val() !== "" && minPrice.val() !== "" &&
+      (parseFloat(maxPrice.val()) < parseFloat(minPrice.val()))) {
       var temp = maxPrice.val();
       maxPrice.val(minPrice.val());
       minPrice.val(temp);
     }
-    // console.log(maxPrice.val() !== "" && minPrice.val() !== "" && (maxPrice.val() < minPrice.val()));
-  }
+  };
 
+  // make changes on minimum price change
   minPrice.on('change', function (e) {
     swapPrice();
     var minpr = minPrice.val();
@@ -54,6 +56,7 @@ $(document).ready(function () {
       priceBtnDp.text("Price");
   });
 
+  // make changes on maximum price change
   maxPrice.on('change', function (e) {
     swapPrice();
     var minpr = minPrice.val();
@@ -176,7 +179,7 @@ $(document).ready(function () {
     }
   });
 
-  // On min beds option change
+  // On max beds option change
   maxBeds.on('change', function (e) {
     var minVal = minBeds.val();
     var maxVal = maxBeds.val();
@@ -223,4 +226,82 @@ $(document).ready(function () {
       $('.bedroom-btns button.d-none').addClass("active");
     }
   });
+
+  //change bathroom choice on click
+  bathBtns.click(function () {
+    $('.bath-btns button.active').removeClass('active');
+    $(this).addClass('active');
+    var selTxt = $(this).text();
+    // change button text and field value
+    if ($(this).text() === "Any") {
+      bathBtnDp.text("Baths");
+      minBaths.val("any");
+    } else {
+      bathBtnDp.text(selTxt + " Baths");
+      var selVal = $(this).attr('data-value');
+      minBaths.val(selVal);
+    };
+    maxBaths.val("any");
+  });
+
+  // On min baths option change
+  minBaths.on('change', function (e) {
+    var minVal = minBaths.val();
+    var maxVal = maxBaths.val();
+    var selBtn = $('.bath-btns button[data-value=' + minVal + ']');
+    var prevBtn = $('.bath-btns button.active');
+    // swap minimum and maximum values 
+    // if minimum is more than max
+    if ((maxVal !== "any" && minVal !== "any" && minVal > maxVal)) {
+      minBaths.val(maxVal)
+      maxBaths.val(minVal);
+    }
+    // change button text based on minimum and maximum values
+    minVal = minBaths.val();
+    maxVal = maxBaths.val();
+    // if max is any
+    if (maxVal === "any") {
+      if (minVal === "any")
+        bathBtnDp.text("Baths");
+      else
+        bathBtnDp.text(selBtn.text() + " Baths");
+    }else {
+      if (minVal === "any")
+        bathBtnDp.text("Any - " + maxVal + " Baths");
+      else
+        bathBtnDp.text(minVal + " - " + maxVal + " Baths");
+    }
+    prevBtn.removeClass('active');
+    selBtn.addClass('active');
+  });
+
+  // On max baths option change
+  maxBaths.on('change', function (e) {
+    var minVal = minBaths.val();
+    var maxVal = maxBaths.val();
+    // if max is none
+    if (maxVal === "any") {
+      if (minVal === "any") {
+        bathBtnDp.text("Baths");
+        $('.bath-btns button.active').removeClass("active");
+        $('.bath-btns button[data-value=any]').addClass("active");
+      } else
+        bathBtnDp.text(minVal + "+ Baths");
+    } else {
+      if (minVal === "any") {
+        bathBtnDp.text("Any - " + maxVal + " Baths");
+        $('.bath-btns button.active').removeClass("active");
+        $('.bath-btns button[data-value=any]').addClass("active");
+      } else {
+        if (maxVal < minVal) {
+          maxBaths.val(minVal);
+          minBaths.val(maxVal).change();
+          minVal = minBaths.val();
+          maxVal = maxBaths.val();
+        }
+        bathBtnDp.text(minVal + " - " + maxVal + " Baths");
+      }
+    }
+  });
+
 });

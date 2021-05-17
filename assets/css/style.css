@@ -1,0 +1,105 @@
+.dropdown-menu,
+.dropdown-menu.show {
+  display: block;
+  transition: .4s ease opacity
+}
+
+.more-dpdwn,
+.property-dpdwn {
+  font-size: .95rem
+}
+
+.dropdown-menu {
+  visibility: hidden;
+  opacity: 0;
+  min-width: 290px;
+  color: #757575
+}
+
+.dropdown-menu.show {
+  visibility: visible;
+  opacity: 1
+}
+
+.property-dpdwn {
+  min-width: 382px
+}
+
+.beds-dpdwn,
+.more-dpdwn,
+.baths-dpdwn {
+  min-width: 385px
+}
+
+.input-group input,
+.list-group {
+  font-size: .9rem
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0
+}
+
+input[type=number] {
+  -moz-appearance: textfield
+}
+
+.currency {
+  position: absolute
+}
+
+.list-group-item {
+  border-top: 0;
+  border-bottom: 0;
+  padding: 5px 10px
+}
+
+.list-group-item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, .125)
+}
+
+input[checked] {
+  fill: red
+}
+
+.property-item:hover .custom-control-input,
+.property-item:hover .custom-control-label {
+  color: red;
+  cursor: pointer
+}
+
+.bedroom-btns button,
+.bath-btns button {
+  border: none;
+  border-radius: 50px;
+  padding: 12.5px;
+  background: 0 0;
+  color: #757575
+}
+
+.bedroom-btns button.active,
+.bedroom-btns button:hover,
+.bath-btns button.active,
+.bath-btns button:hover {
+  border: 1.5px solid red;
+  color: red
+}
+
+.text-subtitle {
+  font-size: 11px
+}
+
+@media (max-width:576px) {
+  .dropdown-menu {
+    transform: translateX(-50%);
+    min-width: 300px
+  }
+}
+
+@media (min-width:576px) {
+  .dropdown-menu {
+    transform: translateX(-50%)
+  }
+}
