@@ -18,29 +18,28 @@
     <div class="form-row align-items-center">
       <div class="col-10 col-sm-auto">
         <label class="sr-only" for="citiesField">City</label>
-        <input name="cities" class="form-control mb-2" list="cities" id="citiesField" data-list-focus="true"
-          placeholder="City">
-        <datalist id="cities">
-          <option value="Belle">
-          <option value="MO|Beulah">
-          <option value="MO|Boss">
-          <option value="MO|Bunker">
-          <option value="MO|Dixon">
-          <option value="MO|Doolittle">
-          <option value="MO|Edgar Springs">
-          <option value="MO|Jadwin">
-          <option value="MO|Jerome">
-          <option value="MO|Lenox">
-          <option value="MO|Licking">
-          <option value="MO|Newburg">
-          <option value="MO|Rolla">
-          <option value="MO|Salem">
-          <option value="MO|St James">
-          <option value="MO|Sullivan">
-          <option value="MO|Vichy">
-          <option value="MO|Vienna">
-          <option value="MO|">
-        </datalist>
+        <input name="cities" class="form-control mb-2" type="text" id="citiesField" placeholder="City">
+        <div class="list-group cities-list d-none position-absolute">
+          <button type="button" class="list-group-item list-group-item-action">Belle</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Beulah</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Boss</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Bunker</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Dixon</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Doolittle</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Edgar Springs</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Jadwin</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Jerome</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Lenox</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Licking</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Newburg</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Rolla</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Salem</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|St James</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Sullivan</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Vichy</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|Vienna</button>
+          <button type="button" class="list-group-item list-group-item-action">MO|</button>
+        </div>
       </div>
 
       <div class="col-auto">
@@ -225,13 +224,13 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="col-auto">
         <label class="sr-only" for="minBathsField">Minimum Baths</label>
         <label class="sr-only" for="maxBathsField">Maximum Baths</label>
         <div class="dropdown mb-2">
-          <button class="btn btn-outline-primary dropdown-toggle" type="button" id="bathsDropDown" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Baths</button>
+          <button class="btn btn-outline-primary dropdown-toggle" type="button" id="bathsDropDown"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Baths</button>
           <ul class="dropdown-menu baths-dpdwn p-3 mt-2">
             <li class="font-weight-bold">Bathrooms</li>
             <li class="bath-btns row justify-content-around my-3 mx-0">
@@ -275,7 +274,7 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="col-auto">
         <button type="submit" class="btn btn-primary mb-2">Submit Search</button>
       </div>

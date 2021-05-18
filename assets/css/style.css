@@ -16,6 +16,15 @@
   color: #757575
 }
 
+.cities-list {
+  z-index: 99;
+  min-width: 94px;
+  max-height: 400px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .dropdown-menu.show {
   visibility: visible;
   opacity: 1

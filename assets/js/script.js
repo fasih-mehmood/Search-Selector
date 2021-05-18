@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  const cities = $("#citiesField");
+  const citiesList = $(".cities-list");
+  const citiesListItems = $(".cities-list button");
   const minPrice = $('#minPriceField');
   const minPriceList = $('.minPrice-list');
   const maxPrice = $('#maxPriceField');
@@ -18,6 +21,47 @@ $(document).ready(function () {
   $('.dropdown-menu').on({
     "click": function (e) {
       e.stopPropagation();
+    }
+  });
+
+  // set city on option select
+  citiesListItems.click(function () {
+    var city = $(this).text();
+    cities.val(city);
+    citiesList.addClass('d-none');
+    citiesListItems.removeClass('d-none');
+  });
+
+  // event listener on cities field
+  cities.on({
+    // show dropdown on cities focused
+    "focusin": function () {
+      citiesList.removeClass('d-none');
+      citiesListItems.removeClass('d-none');
+      // attach click listener to document
+      $(document).on("mouseup", function (e) {
+        var container = $('.cities-list');
+        var field = $("#citiesField");
+        // if the target of the click isn't the the cities field or dropdown
+        // then disable it
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+          if (!field.is(e.target) && field.has(e.target).length === 0) {
+            $(".cities-list").addClass('d-none');
+            $(".cities-list button").remove('d-none');
+            $(document).off("mouseup");
+          }
+        }
+      });
+    },
+    // search from list on type
+    "keyup": function () {
+      var value = $(this).val().toLowerCase();
+      citiesListItems.filter(function () {
+        if ($(this).text().toLowerCase().indexOf(value) > -1)
+          $(this).removeClass('d-none');
+        else
+          $(this).addClass('d-none');
+      });
     }
   });
 
